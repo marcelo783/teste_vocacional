@@ -31,7 +31,7 @@ def collect_data():
 
     recommended_course = input("Qual curso você recomendaria? (Ex: Curso A, Curso B, Curso C, ...) ")
 
-    with open('data/responses.csv', 'a', newline='', encoding='utf-8') as file:
+    with open('data/responses_utf8.csv', 'a', newline='', encoding='utf-8') as file:
         writer = csv.writer(file)
         writer.writerow(responses + [recommended_course])
     print("Respostas salvas com sucesso!")

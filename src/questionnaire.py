@@ -15,12 +15,3 @@ def get_questionnaire():
     ]
     return questions
 
-def get_courses():
-    courses = [
-        "Curso A - Matemática",
-        "Curso B - Administração",
-        "Curso C - Ciência da Computação",
-        "Curso D - Engenharia",
-        "Curso E - Design"
-    ]
-    return courses

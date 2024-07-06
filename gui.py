@@ -8,16 +8,16 @@ model = joblib.load('model/model.joblib')
 
 # Carregar o dataset de exemplo
 questions = [
-    "Quanto você gosta de resolver problemas matemáticos?",
-    "Qual o seu interesse em biologia?",
-    "Você gosta de programação?",
-    "Quanto você gosta de desenhar?",
-    "Qual o seu interesse em história?",
-    "Qual o seu interesse em química?",
-    "Quanto você gosta de trabalhar em equipe?",
-    "Qual o seu interesse em física?",
-    "Você gosta de ler livros?",
-    "Qual o seu interesse em geografia?"
+    "Você gosta de trabalhar com números? (1-5): ",
+        "Você prefere trabalhar em equipe? (1-5): ",
+        "Você tem interesse em tecnologia? (1-5): ",
+        "Você gosta de resolver problemas complexos? (1-5): ",
+        "Você prefere trabalhos criativos? (1-5): ",
+        "Você gosta de aprender sobre biologia? (1-5): ",
+        "Você gosta de escrever? (1-5): ",
+        "Você prefere trabalhar ao ar livre? (1-5): ",
+        "Você gosta de desenhar? (1-5): ",
+        "Você prefere trabalhos práticos? (1-5): "
 ]
 
 courses = ["Curso A", "Curso B", "Curso C", "Curso D", "Curso E", "Curso F", "Curso G", "Curso H", "Curso I", "Curso J"]
