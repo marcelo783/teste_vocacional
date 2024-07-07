@@ -29,7 +29,7 @@ def collect_data():
             except ValueError:
                 print("Entrada inválida. Por favor, insira um número entre 1 e 5.")
 
-    recommended_course = input("Qual curso você recomendaria? (Ex: Curso A, Curso B, Curso C, ...) ")
+    recommended_course = input("Qual curso você recomendaria? ")
 
     with open('data/responses_utf8.csv', 'a', newline='', encoding='utf-8') as file:
         writer = csv.writer(file)

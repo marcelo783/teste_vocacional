@@ -1,10 +1,10 @@
-
 import os
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from sklearn.tree import DecisionTreeClassifier
+from sklearn.tree import DecisionTreeClassifier, plot_tree
 from sklearn.metrics import accuracy_score, classification_report
 import joblib
+import matplotlib.pyplot as plt
 
 def train_model():
     # Carregar os dados no padrão UTF-8
@@ -37,6 +37,12 @@ def train_model():
     y_pred = model.predict(X_test)
     print(f'Acurácia do modelo: {accuracy_score(y_test, y_pred):.2f}')
     print(classification_report(y_test, y_pred))
+    
+    # Visualizar a árvore de decisão
+    plt.figure(figsize=(20, 10))
+    plot_tree(model, feature_names=questions, class_names=model.classes_, filled=True, rounded=True)
+    plt.title('Decision Tree')
+    plt.show()  # Exibir a figura da árvore de decisão
     
     # Criar o diretório 'model' se não existir
     if not os.path.exists('model'):
