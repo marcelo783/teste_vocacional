@@ -1,6 +1,5 @@
 import tkinter as tk
 from tkinter import messagebox
-import pandas as pd
 import joblib
 
 # Carregar o modelo treinado
@@ -9,15 +8,15 @@ model = joblib.load('model/model.joblib')
 # Carregar o dataset de exemplo
 questions = [
     "Você gosta de trabalhar com números? (1-5): ",
-        "Você prefere trabalhar em equipe? (1-5): ",
-        "Você tem interesse em tecnologia? (1-5): ",
-        "Você gosta de resolver problemas complexos? (1-5): ",
-        "Você prefere trabalhos criativos? (1-5): ",
-        "Você gosta de aprender sobre biologia? (1-5): ",
-        "Você gosta de escrever? (1-5): ",
-        "Você prefere trabalhar ao ar livre? (1-5): ",
-        "Você gosta de desenhar? (1-5): ",
-        "Você prefere trabalhos práticos? (1-5): "
+    "Você prefere trabalhar em equipe? (1-5): ",
+    "Você tem interesse em tecnologia? (1-5): ",
+    "Você gosta de resolver problemas complexos? (1-5): ",
+    "Você prefere trabalhos criativos? (1-5): ",
+    "Você gosta de aprender sobre biologia? (1-5): ",
+    "Você gosta de escrever? (1-5): ",
+    "Você prefere trabalhar ao ar livre? (1-5): ",
+    "Você gosta de desenhar? (1-5): ",
+    "Você prefere trabalhos práticos? (1-5): "
 ]
 
 courses = ["Curso A", "Curso B", "Curso C", "Curso D", "Curso E", "Curso F", "Curso G", "Curso H", "Curso I", "Curso J"]
@@ -39,6 +38,11 @@ def recommend_course():
     prediction = model.predict([responses])[0]
     messagebox.showinfo("Recomendação de Curso", f"O curso recomendado para você é: {prediction}")
 
+# Função para limpar o formulário
+def clear_form():
+    for entry in entries:
+        entry.delete(0, tk.END)
+
 # Criar a janela principal
 root = tk.Tk()
 root.title("Teste Vocacional")
@@ -55,6 +59,10 @@ for i, question in enumerate(questions):
 # Adicionar botão para recomendar curso
 recommend_button = tk.Button(root, text="Recomendar Curso", command=recommend_course)
 recommend_button.pack()
+
+# Adicionar botão para limpar o formulário
+clear_button = tk.Button(root, text="Novo Teste", command=clear_form)
+clear_button.pack()
 
 # Iniciar o loop da interface gráfica
 root.mainloop()
